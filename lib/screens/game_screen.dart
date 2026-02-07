@@ -129,9 +129,11 @@ class _GameScreenState extends State<GameScreen> {
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.all(16),
+              reverse: true,
               itemCount: _game.guessHistory.length,
               itemBuilder: (context, index) {
-                final result = _game.guessHistory[index];
+                final result =
+                    _game.guessHistory[_game.guessHistory.length - 1 - index];
                 return GuessRow(result: result);
               },
             ),
